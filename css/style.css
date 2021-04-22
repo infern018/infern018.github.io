@@ -41,8 +41,77 @@ h1{
   left:10px;
 }
 
+
 /* work-cards */
 .work-card{
   background-color: crimson;
-  margin: 0px 30%;
+  margin: 0px 20%;
+  height: 150px;
+  transform: skew(175deg);
+}
+
+.work-card p{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: aliceblue;
+  padding:40px 0;
+  font-size: 50px;
+}
+
+.wc1{
+  background-color: #6060EF;
+}
+
+.wc3{
+  background-color: #FF4CFF;
+}
+
+.wc4{
+  background-color: #FF813D;
+}
+
+.wc6{
+  background-color: rebeccapurple;
+}
+
+.wc5{
+  background-color: rgb(65, 163, 108);
+}
+
+@media screen and (max-width: 769px) {
+  .console-container{
+    font-size: 130px;
+    letter-spacing: -2px;
+  }
+
+  #console{
+    margin-top: 100px;
+  }
+
+  .work-card p{
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .console-container{
+    font-size: 50px;
+    letter-spacing: 2px;
+  }
+
+  #console{
+    margin-top:150px;
+  }
+
+  .work-card{
+    margin: 0px 10%;
+    height: 100px;
+    transform: skew(175deg);
+  }
+  
+  .work-card p{
+    font-weight: 600;
+    padding:30px 0;
+    font-size: 26px;
+  }
 }
