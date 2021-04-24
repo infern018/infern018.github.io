@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./assets/magic-wand.png" type="image/gif" sizes="16x16">
+    <title>Hola!</title>
+</head>
+<body>
+
+  <!-- onmouseout="handleMouseOut()" onmouseover="handleMouseOver()" -->
+
+    <div class="navbar-section">
+      <button class="nav-display" onclick="handleClick()" >V</button>
+      <div class="nav-content" style="opacity: 0;">
+        <a href="#" class="nav-link">Work.</a>
+        <p class="nav-link">About.</p>
+        <p class="nav-link">Wtf.</p>
+        <p class="nav-link">Contact.</p>
+      </div>
+    </div>
+
+    <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div>
+      
+    <div class="work-section">
+      <div class="work-head">
+        <h2>Work</h2>
+        <hr>
+      </div>
+      
+      <div class="work-card wc1"><a class="link">GeekHaven Revamp</a></div>
+      <div class="work-card wc2"><a class="link">Movie Looper</a></div>
+      <div class="work-card wc3"><a class="link">Patatap Clone</a></div>
+      <div class="work-card wc4"><a class="link">Pixi Shoot</a></div>
+      <div class="work-card wc5"><a class="link">Histology MetaData</a></div>
+      <div class="work-card wc6"><a class="link">Space Mix</a></div>
+    </div>
+<script>
+     consoleText(['Hello','नमस्ते','Hola','Bonjour','Olá','こんにちは'], 'text',['#FCF7F4']);
+
+function consoleText(words, id, colors) {
+  if (colors === undefined) colors = ['#fff'];
+  var visible = true;
+  var con = document.getElementById('console');
+  var letterCount = 1;
+  var x = 1;
+  var waiting = false;
+  var target = document.getElementById(id)
+  target.setAttribute('style', 'color:' + colors[0])
+  window.setInterval(function() {
+
+    if (letterCount === 0 && waiting === false) {
+      waiting = true;
+      target.innerHTML = words[0].substring(0, letterCount)
+      window.setTimeout(function() {
+        var usedColor = colors.shift();
+        colors.push(usedColor);
+        var usedWord = words.shift();
+        words.push(usedWord);
+        x = 1;
+        target.setAttribute('style', 'color:' + colors[0])
+        letterCount += x;
+        waiting = false;
+      }, 1200)
+    } else if (letterCount === words[0].length + 1 && waiting === false) {
+      waiting = true;
+      window.setTimeout(function() {
+        x = -1;
+        letterCount += x;
+        waiting = false;
+      }, 1200)
+    } else if (waiting === false) {
+      target.innerHTML = words[0].substring(0, letterCount)
+      letterCount += x;
+    }
+  }, 200)
+  window.setInterval(function() {
+    if (visible === true) {
+      con.className = 'console-underscore hidden'
+      visible = false;
+
+    } else {
+      con.className = 'console-underscore'
+
+      visible = true;
+    }
+  }, 1000)
+}
+
+const colorArray = ['#EA178C','#4747e6','rgb(118, 23, 173)']
+
+//to trigger navbar
+function handleClick(){
+  const cont = document.querySelector('.nav-content');
+  if(cont.style.opacity == '0'){
+    cont.style.opacity = '1';
+    cont.style.height = 'auto';
+  } else {
+    cont.style.opacity = '0';
+    cont.style.height = '0';
+  }
+
+  const btn = document.querySelector('button');
+  var randomColor = colorArray[Math.floor(Math.random()*colorArray.length)];
+
+  btn.style.backgroundColor = randomColor;
+
+}
+
+// function handleMouseOut(){
+//   const btn = document.querySelector('button');
+//   btn.style.backgroundColor = '#222222';
+// }
+
+// function handleMouseOver(){
+//   const btn = document.querySelector('button');
+//   btn.style.backgroundColor = '#EA178C';
+// }
+
+
+
+// boom boom
+// const article = document.querySelector('.console-container');
+
+// // to compute the center of the card retrieve its coordinates and dimensions
+// const {
+//   x, y, width, height,
+// } = article.getBoundingClientRect();
+// const cx = x + width / 2;
+// const cy = y + height / 2;
+
+// // following the mousemove event compute the distance betwen the cursor and the center of the card
+// function handleMove(e) {
+//   const { pageX, pageY } = e;
+
+//   // ! consider the relative distance in the [-1, 1] range
+//   const dx = (cx - pageX) / (width / 2);
+//   const dy = (cy - pageY) / (height / 2);
+
+//   // rotate the card around the x axis, according to the vertical distance, and around the y acis, according to the horizontal gap 
+//   this.style.transform = `rotateX(${50 * dy * -1}deg) rotateY(${50 * dx}deg)`;
+// }
+
+// // following the mouseout event reset the transform property
+// function handleOut() {
+//   this.style.transform = 'initial';
+// }
+
+// article.addEventListener('mousemove', handleMove);
+// article.addEventListener('mouseout', handleOut);
+
+
+</script>
+
+</body>
+</html>

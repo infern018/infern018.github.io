@@ -5,29 +5,63 @@ body{
     text-align: center;
     justify-content: center;
     background-color:#222222;
-}
-
-h1{
-    color: white;
-    text-align: center;
     font-family: 'Poppins', sans-serif;
-    font-size: 200px;
-    margin-top:100px;
-    padding: 0;
-    margin-bottom: 0px;
-    letter-spacing: -17px;
 }
-
 
 .hidden {
   opacity:0;
 }
+
+/* Navbar */
+.navbar-section{
+  background-color: #222222;
+  transition:  all 2s ease;
+}
+
+button{
+  font-size: 30px;
+  background-color: #222222;
+  border: none;
+  padding: 12px 19px;
+  color: rgb(245, 245, 245);
+  font-weight: 600;
+  margin-top: 4%;
+}
+
+button:hover{
+  background-color:#EA178C;
+  cursor: pointer;
+}
+
+.nav-content{
+    transition: opacity 2s ease-in-out;
+    margin-top: 10px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    color:whitesmoke;
+}
+
+.nav-link{
+  text-decoration: none;
+  color: whitesmoke;
+  display: inline-block;
+  padding: 0 40px;
+  font-size: 25px;
+  letter-spacing: -1px;
+  font-weight: 600;
+  border-bottom: 1px solid white;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+}
+
+
+/* Typing Text Effect */
 .console-container {
   color: white;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
   font-size: 180px;
-  margin-top:100px;
+  margin-top:30px;
   font-weight: 600;
   padding: 0;
   margin-bottom: 0px;
@@ -41,21 +75,68 @@ h1{
   left:10px;
 }
 
+/* work heading */
+.work-section hr{
+  position: relative;
+  width: 100%;
+  border:none;
+  border-bottom: 1px solid white;
+  bottom: 39px;
+  z-index: -1;
 
-/* work-cards */
+}
+
+.work-head{
+  color: rgb(245, 245, 245);
+}
+
+.work-head h2{
+  position: relative;
+  margin-left: 30px;
+  background-color: #222222;
+  transform: skew(175deg);
+  width: 100px;
+}
+
+/* Work-cards */
 .work-card{
   background-color: crimson;
-  margin: 0px 20%;
+  margin: 50px 18%;
   height: 150px;
   transform: skew(175deg);
 }
 
-.work-card p{
-  font-family: 'Poppins', sans-serif;
+.work-card a{
   font-weight: 600;
   color: aliceblue;
-  padding:40px 0;
+  padding:40px 0 0 0;
   font-size: 50px;
+  cursor: pointer;
+}
+
+.work-card a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  /* padding: 15px 20px; */
+  position: relative;
+}
+.work-card a:after {    
+  background: none repeat scroll 0 0 transparent;
+  /* bottom: 0; */
+  content: "";
+  display: block;
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+a:hover:after { 
+  width: 100%; 
+  left: 0; 
 }
 
 .wc1{
@@ -63,7 +144,7 @@ h1{
 }
 
 .wc3{
-  background-color: #FF4CFF;
+  background-color: #EA178C;
 }
 
 .wc4{
@@ -88,7 +169,7 @@ h1{
     margin-top: 100px;
   }
 
-  .work-card p{
+  .work-card a{
     font-size: 40px;
   }
 }
@@ -104,14 +185,20 @@ h1{
   }
 
   .work-card{
-    margin: 0px 10%;
+    margin: 30px 10%;
     height: 100px;
     transform: skew(175deg);
   }
   
-  .work-card p{
+  .work-card a{
     font-weight: 600;
     padding:30px 0;
-    font-size: 26px;
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1299px) {
+  .console-container{
+    margin-top: 150px;
   }
 }
