@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./assets/magic-wand.png" type="image/gif" sizes="16x16">
     <title>Hola!</title>
-</head>
+  </head>
 <body>
 
   <!-- onmouseout="handleMouseOut()" onmouseover="handleMouseOver()" -->
@@ -37,6 +37,29 @@
       <div class="work-card wc5"><a class="link">Histology MetaData</a></div>
       <div class="work-card wc6"><a class="link">Space Mix</a></div>
     </div>
+
+    <div class="card wc1">
+      <input type="checkbox">
+      <div class="toggle"><span>+</span></div>
+      <div class="headBx"><h1>GeekHaven Revamp</h1></div>
+      <div class="details">
+        <!-- <h2>Hello</h2> -->
+        <div class="headers">
+          <h2>Portfolio Website</h2>
+          <h2>HTML, CSS, PHP, SQL</h2>
+        </div>
+        <p>A revamp of the official website of GeekHaven(IIIT-A), to create a dynamic and unique website that can be used in upcoming sessions too.</p>
+      </div>
+    </div>
+
+    <div class="card wc2">
+      <input type="checkbox">
+      <div class="toggle">+</div>
+      <div class="headBx"><h1></h1></div>
+      <div class="details"></div>
+    </div>
+
+
 <script>
      consoleText(['Hello','नमस्ते','Hola','Bonjour','Olá','こんにちは'], 'text',['#FCF7F4']);
 
@@ -106,7 +129,6 @@ function handleClick(){
   var randomColor = colorArray[Math.floor(Math.random()*colorArray.length)];
 
   btn.style.backgroundColor = randomColor;
-
 }
 
 // function handleMouseOut(){

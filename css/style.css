@@ -76,6 +76,10 @@ button:hover{
 }
 
 /* work heading */
+.work-section{
+  overflow: hidden;
+}
+
 .work-section hr{
   position: relative;
   width: 100%;
@@ -98,6 +102,131 @@ button:hover{
   width: 100px;
 }
 
+/* card trial */
+.card{
+  position: relative;
+  background: #6060EF;
+  height: 200px;
+  margin: 50px 18%;
+  overflow: hidden;
+  transform: skew(175deg);
+  transition: 0.5s;
+}
+
+input,
+.toggle{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  right: 20px;
+  outline: none;
+  z-index: 10;
+}
+
+input{
+  opacity: 0;
+}
+
+.toggle{
+  pointer-events: none;
+  border-radius: 50%;
+  background: #fff;
+  transition: 0.5s;
+  text-align: center;
+  font-size: 37px;
+  box-shadow: 0 0 0 0px #222222;
+}
+
+input:checked ~ .toggle{
+  box-shadow: 0 0 0 800px #222222;
+  transform: rotate(225deg);
+}
+
+input:checked ~ .details{
+  /* border-left:5px solid wheat; */
+  border-left: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  /* border-image: linear-gradient(to right, #00c9ff, #92fe9d); */
+  border-image: linear-gradient(to right,#ff4cff,#ff813d);
+  border-image-slice: 1;
+}
+
+.headBx,
+.details {
+  position: absolute;
+}
+
+.headBx{
+  font-size: 30px;
+  width: 100%;
+  text-transform: uppercase;
+  color: whitesmoke;
+}
+
+
+.headBx h1{
+  font-weight: 600;
+  color: aliceblue;
+  padding:20px 0 0 0;
+  font-size: 50px;
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+.headBx h1:after {    
+  background: none repeat scroll 0 0 transparent;
+  /* bottom: 0; */
+  content: "";
+  display: block;
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.headBx h1:hover:after { 
+  width: 100%; 
+  left: 0px; 
+}
+
+.headers h2{
+  display: inline-block;
+  border-left: 5px solid transparent;
+  /* border-image: linear-gradient(to right,  #00c9ff, #92fe9d); */
+  border-image: linear-gradient(to right,#ff4cff,#ff813d);
+  border-image-slice: 1;
+  padding: 0px 10px;
+  margin-right:40px;
+}
+
+.details{
+  padding: 20px;
+  padding-left: 35px;
+  box-sizing: border-box;
+  text-align: left;
+  z-index: 11;
+  pointer-events: none;
+  transition: 0.5s;
+  opacity: 0;
+  color:#fff
+}
+
+.details p{
+  padding-right:30px;
+}
+
+input:checked ~ .details{
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+
 /* Work-cards */
 .work-card{
   background-color: crimson;
@@ -114,12 +243,11 @@ button:hover{
   cursor: pointer;
 }
 
-.work-card a {
+.work-card a{
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
-  /* padding: 15px 20px; */
   position: relative;
 }
 .work-card a:after {    
@@ -143,6 +271,10 @@ a:hover:after {
   background-color: #6060EF;
 }
 
+.wc2{
+  background-color: crimson;
+}
+
 .wc3{
   background-color: #EA178C;
 }
@@ -159,6 +291,7 @@ a:hover:after {
   background-color: rgb(65, 163, 108);
 }
 
+
 @media screen and (max-width: 769px) {
   .console-container{
     font-size: 130px;
@@ -172,6 +305,35 @@ a:hover:after {
   .work-card a{
     font-size: 40px;
   }
+
+  .card{
+    height: 170px;
+  }
+
+  .headBx h1{
+    font-size: 40px;
+  }
+
+  input, .toggle{
+    width: 30px;
+    height: 30px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .toggle span{
+    position: relative;
+    top: -10px;
+  }
+
+  .headers h2{
+    font-size: 15px;
+  }
+
+  .details p{
+    font-size: 15px;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -195,6 +357,48 @@ a:hover:after {
     padding:30px 0;
     font-size: 22px;
   }
+
+  .card{
+    height: 110px;
+    margin: 50px 13%;
+  }
+
+  .headBx h1{
+    font-size: 22px;
+  }
+
+  input, .toggle{
+    width: 25px;
+    height:25px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .toggle span{
+    position: relative;
+    font-size: 30px;
+    top: -17px;
+  }
+
+  .headers h2{
+    font-size: 8px;
+    padding: 0px 3px;
+    margin-right: 5px;
+    border-width: 3px;
+  }
+
+  .details{
+    padding-left: 20px;
+  }
+
+  .details p{
+    font-size: 8px;
+  }
+
+  input:checked ~ .card{
+    background-color: #ff813d;
+    height: 500px;
+  }
 }
 
 @media screen and (min-width: 1299px) {
@@ -202,3 +406,4 @@ a:hover:after {
     margin-top: 150px;
   }
 }
+
