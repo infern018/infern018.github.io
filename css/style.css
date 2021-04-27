@@ -60,6 +60,7 @@ button:hover{
 
 /* Typing Text Effect */
 .console-container {
+  background: #222222;
   color: white;
   text-align: center;
   font-size: 180px;
@@ -69,7 +70,7 @@ button:hover{
   margin-bottom: 0px;
   letter-spacing: -17px;
   height: 100vh;
-  mix-blend-mode: screen;
+  /* mix-blend-mode: screen; */
 }
 .console-underscore {
    display:inline-block;
@@ -81,6 +82,7 @@ button:hover{
 /* work heading */
 .work-section{
   overflow: hidden;
+  background: #222222;
 }
 
 .work-section hr{
@@ -89,12 +91,13 @@ button:hover{
   border:none;
   border-bottom: 1px solid white;
   bottom: 39px;
-  z-index: -1;
+  /* z-index: -1; */
 
 }
 
 .work-head{
   color: rgb(245, 245, 245);
+  z-index: 2;
 }
 
 .work-head h2{
@@ -103,6 +106,7 @@ button:hover{
   background-color: #222222;
   transform: skew(175deg);
   width: 100px;
+  z-index: 2;
 }
 
 /* card trial */
@@ -454,4 +458,49 @@ input:checked ~ .details{
   .console-container{
     margin-top: 150px;
   }
+}
+
+
+@media ( hover: none ) {
+
+  .cursor {
+  
+    display: none !important;
+    
+    }
+  }
+
+* {
+
+  cursor: none;
+  
+  }
+
+.cursor {
+
+  --size: 150px;
+  
+  height: var( --size );
+  width: var( --size );
+  
+  border-radius: 50%;
+  pointer-events: none;
+  position: fixed;
+  transform: translate( -50%, -50% );
+  z-index: 99999999999;
+  
+  }
+
+.cursor.cursor-dot {
+
+  background: #ffffff;
+  mix-blend-mode:soft-light; 
+  transition: width 0.6s, height 0.6s, background-color 0.6s;
+  transition-timing-function: ease-out;
+  }
+
+.cursor-dot.active {
+
+  --size: 170px;
+  background-color: #ffffff;
 }

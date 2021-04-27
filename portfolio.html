@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./assets/shuriken.png" type="image/gif" sizes="16x16">
     <title>Accio!</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
   </head>
 <body>
     <div class="navbar-section">
@@ -14,7 +18,7 @@
       <div class="nav-content" style="opacity: 0;">
         <a href="#" class="nav-link">Work.</a>
         <p class="nav-link">About.</p>
-        <p class="nav-link">Lumos.</p>
+        <p class="nav-link" id="lumos">Lumos.</p>
         <p class="nav-link">Contact.</p>
       </div>
     </div>
@@ -130,6 +134,7 @@
 
    <h2>Close it</h2>
 
+
 <script>
      consoleText(['Hello','नमस्ते','Hola','Bonjour','Olá','こんにちは'], 'text',['#FCF7F4']);
 
@@ -201,17 +206,6 @@ function handleClick(){
   btn.style.backgroundColor = randomColor;
 }
 
-// function handleMouseOut(){
-//   const btn = document.querySelector('button');
-//   btn.style.backgroundColor = '#222222';
-// }
-
-// function handleMouseOver(){
-//   const btn = document.querySelector('button');
-//   btn.style.backgroundColor = '#EA178C';
-// }
-
-
 
 // boom boom
 // const article = document.querySelector('.console-container');
@@ -243,6 +237,54 @@ function handleClick(){
 // article.addEventListener('mousemove', handleMove);
 // article.addEventListener('mouseout', handleOut);
 
+
+$( ( ) => {
+  
+  $( 'body' ).prepend ( '<div class="cursor cursor-dot" id="curs" style="left: 0px; top: 0px;">' );
+  $( window ).mousemove ( function ( e ) {
+    $( '.cursor' ).css ( {
+      left: e.clientX,
+      top:  e.clientY
+      } );      
+    } );
+
+  $( window ).mousemove ( function ( e ) {  
+    $( 'a' ).on ( 'mouseenter', function ( ) {
+      $( '.cursor' ).addClass ( 'active' );     
+      } );    
+    } );
+    
+  $( window ).mousemove ( function ( e ) {
+    $( 'a' ).on ( 'mouseleave', function ( ) {
+      $( '.cursor' ).removeClass ( 'active' );
+      } );
+    } );
+
+    $(window).on('scroll', function(e){
+    $('.cursor').css({
+       left:  e.pageX,
+       top:   e.pageY
+    });
+  });
+
+  var flag=0;
+
+  $('#lumos').click(function(){
+    console.log(flag);
+    if(flag==0){
+      $('.cursor').css ({
+        mixBlendMode: 'difference'
+      });
+      flag=1;
+    } else {
+        $('.cursor').css ({
+          mixBlendMode: 'soft-light'
+        });
+        flag=0;
+      }
+    });
+
+});
 
 </script>
 
