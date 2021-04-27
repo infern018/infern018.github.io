@@ -107,7 +107,7 @@ button:hover{
   position: relative;
   background: #6060EF;
   height: 200px;
-  margin: 50px 18%;
+  margin: 40px 18%;
   overflow: hidden;
   transform: skew(175deg);
   transition: 0.5s;
@@ -165,10 +165,10 @@ input:checked ~ .details{
 }
 
 
-.headBx h1{
+.headBx a{
   font-weight: 600;
   color: aliceblue;
-  padding:20px 0 0 0;
+  padding:60px 0 0 0;
   font-size: 50px;
   cursor: pointer;
   color: #fff;
@@ -178,7 +178,7 @@ input:checked ~ .details{
   position: relative;
 }
 
-.headBx h1:after {    
+.headBx a:after {    
   background: none repeat scroll 0 0 transparent;
   /* bottom: 0; */
   content: "";
@@ -190,7 +190,7 @@ input:checked ~ .details{
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-.headBx h1:hover:after { 
+.headBx a:hover:after { 
   width: 100%; 
   left: 0px; 
 }
@@ -226,69 +226,37 @@ input:checked ~ .details{
   transition-delay: 0.1s;
 }
 
-
-/* Work-cards */
-.work-card{
-  background-color: crimson;
-  margin: 50px 18%;
-  height: 150px;
-  transform: skew(175deg);
-}
-
-.work-card a{
-  font-weight: 600;
-  color: aliceblue;
-  padding:40px 0 0 0;
-  font-size: 50px;
-  cursor: pointer;
-}
-
-.work-card a{
-  color: #fff;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-}
-.work-card a:after {    
-  background: none repeat scroll 0 0 transparent;
-  /* bottom: 0; */
-  content: "";
-  display: block;
-  height: 4px;
-  left: 50%;
-  position: absolute;
-  background: #fff;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0;
-}
-a:hover:after { 
-  width: 100%; 
-  left: 0; 
-}
-
 .wc1{
   background-color: #6060EF;
+  background: linear-gradient(to right, #4776e6, #8e54e9); 
 }
 
 .wc2{
   background-color: crimson;
+  background: linear-gradient(to right, #ff512f, #dd2476);
 }
 
 .wc3{
   background-color: #EA178C;
+  background: linear-gradient(to right, #aa076b, #61045f);
 }
 
 .wc4{
   background-color: #FF813D;
+  background: linear-gradient(to right, #ff512f, #f09819);
+  
 }
 
 .wc6{
   background-color: rebeccapurple;
+  background: linear-gradient(to right, #af16ce, #8a26e2); 
+  /* background: linear-gradient(to right, #c33764, #1d2671); */
 }
 
 .wc5{
   background-color: rgb(65, 163, 108);
+  /* background: linear-gradient(to right, #1a2980, #26d0ce); */
+  background: linear-gradient(to right, #02aab0, #00cdac);
 }
 
 
@@ -302,15 +270,12 @@ a:hover:after {
     margin-top: 100px;
   }
 
-  .work-card a{
-    font-size: 40px;
-  }
-
   .card{
     height: 170px;
+    margin: 50px 15%;
   }
 
-  .headBx h1{
+  .headBx a{
     font-size: 40px;
   }
 
@@ -346,25 +311,17 @@ a:hover:after {
     margin-top:150px;
   }
 
-  .work-card{
-    margin: 30px 10%;
-    height: 100px;
-    transform: skew(175deg);
-  }
-  
-  .work-card a{
-    font-weight: 600;
-    padding:30px 0;
-    font-size: 22px;
-  }
-
   .card{
-    height: 110px;
-    margin: 50px 13%;
+    text-align: left;
+    height: 220px;
+    margin: 50px 8%;
   }
 
-  .headBx h1{
-    font-size: 22px;
+  .headBx a{
+    font-size: 35px;
+    padding:20px;
+    padding-top: 50px;
+    padding-left: 40px;
   }
 
   input, .toggle{
@@ -381,18 +338,20 @@ a:hover:after {
   }
 
   .headers h2{
-    font-size: 8px;
-    padding: 0px 3px;
-    margin-right: 5px;
+    font-size: 14px;
+    padding: 0px 8px;
     border-width: 3px;
   }
 
   .details{
     padding-left: 20px;
+    text-align: left;
+    height: 100%;
   }
 
   .details p{
-    font-size: 8px;
+    font-size: 12px;
+    padding-right: 10px;
   }
 
   input:checked ~ .card{
