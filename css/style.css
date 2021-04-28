@@ -64,7 +64,8 @@ button:hover{
   color: white;
   text-align: center;
   font-size: 180px;
-  margin-top:30px;
+  /* margin-top:30px; */
+  border-top:30px solid #222222;
   font-weight: 600;
   padding: 0;
   margin-bottom: 0px;
@@ -129,6 +130,8 @@ input,
   right: 20px;
   outline: none;
   z-index: 10;
+  cursor: pointer;
+
 }
 
 input{
@@ -268,7 +271,7 @@ input:checked ~ .details{
 
 /* about-section */
 .about-section{
-  margin-top: 400px;
+  border-top: 400px solid #222222;
   justify-content: center;
 }
 
@@ -313,6 +316,70 @@ input:checked ~ .details{
   background: #5BF390;
   transform: skew(175deg);
 }
+
+.footer-section{
+  background: #222222;
+  border-top: 80px solid #222222;
+  width: 100%;
+  text-align: left;
+  border-bottom: 7px solid #222222;
+}
+
+.footer-section .sub-sec{
+  display: inline-block;
+  background: #222222;
+  text-align: right;
+}
+
+.left-half{
+  text-align: left;
+}
+
+.left-half a{
+  font-size: 45px;
+  margin: 0 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgb(77, 77, 77);
+}
+
+.left-half a:hover{
+  color:whitesmoke
+}
+
+.right-half{
+  float: right;
+  background: #222222;
+}
+
+.right-half a{
+  color:rgb(80, 80, 80);
+  text-decoration: none;
+  font-size: 45px;
+  font-weight: 600;
+  padding:0 20px;
+}
+
+.git{
+  font-size: 50px !important;
+}
+
+.fa-instagram:hover{
+  color: #dc2743;
+}
+
+.fa-twitter:hover{
+  color: #4DFFFF;
+}
+
+.fa-github:hover{
+  color: #4184ff;
+}
+
+.fa-envelope:hover{
+  color: #5BF390;
+}
+
 
 @media screen and (max-width: 769px) {
   .console-container{
@@ -367,6 +434,25 @@ input:checked ~ .details{
     margin: auto 15%;
   }
 
+  
+  .left-half a{
+    font-size: 35px;
+    margin: 0 30px;
+    font-weight: 500;
+    color: rgb(210, 210, 210);
+  }
+
+  .right-half a{
+    font-size: 35px;
+    font-weight: 600;
+    padding:0 20px;
+    color: rgb(210, 210, 210);
+  }
+  
+  .git{
+    font-size: 38px !important;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -377,6 +463,10 @@ input:checked ~ .details{
     font-weight: 600;
     border-bottom: 1px solid white;
     border-bottom-right-radius: 10px;
+  }
+
+  #lumos{
+    display: none;
   }
   
   .console-container{
@@ -451,6 +541,31 @@ input:checked ~ .details{
     font-size: 18px;
     line-height: 1.7;
     word-spacing: 5px;
+  }
+
+  .footer-section{
+    border-top: 60px solid #222222;
+  }
+
+  .left-half a{
+    font-size: 24px;
+    margin: 0 15px;
+    font-weight: 500;
+  }
+
+  .right-half{
+    margin-right: 10px;
+  }
+
+  .right-half a{
+    font-size: 24px;
+    font-weight: 600;
+    padding:0 7px;
+    color: rgb(210, 210, 210);
+  }
+  
+  .git{
+    font-size: 25px !important;
   }
 }
 
